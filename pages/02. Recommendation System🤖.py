@@ -11,7 +11,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 # this need change
-file_path = r"C:\Users\natas\Downloads\app\app\merged_df.csv"
+file_path = "merged_df.csv"
 
 st.title("🤖 Recommendation System")
 st.write("Welcome to Restaurant Recomendation Sytem")
