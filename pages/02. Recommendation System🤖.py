@@ -10,7 +10,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
-# this need change
+# file_path
 file_path = "merged_df.csv"
 
 st.title("🤖 Recommendation System")
