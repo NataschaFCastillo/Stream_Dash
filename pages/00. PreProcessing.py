@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 # this change need
-file_path = r"C:\Users\natas\Documents\GitHub\integrated-ca2-50-NataschaFCastillo\Restaurant_Ratings.xlsx"
+file_path = "../Restaurant_Ratings.xlsx"
 st.title("PreProcessing")
 
 ratings_df = pd.read_excel(file_path, sheet_name=0)
