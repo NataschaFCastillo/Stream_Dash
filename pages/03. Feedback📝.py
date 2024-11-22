@@ -3,7 +3,7 @@ import pandas as pd
 import os
 
 # this need change
-folder_path = r"C:\Users\natas\Downloads\app\app\pages"
+folder_path = "pages"
 
 st.title("📝 Feedback")
 st.write("Please provide your feedback.")
