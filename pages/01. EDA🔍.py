@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 
-# this need change
+# File_path
 file_path = "merged_df.csv"
 
 st.title("🔍 EDA")
