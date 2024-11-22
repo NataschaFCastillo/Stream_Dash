@@ -4,7 +4,7 @@ import plotly.express as px
 
 
 # this need change
-file_path = r"C:\Users\natas\Downloads\app\app\merged_df.csv"
+file_path = "merged_df.csv"
 
 st.title("🔍 EDA")
 merged_df = pd.read_csv(file_path)
