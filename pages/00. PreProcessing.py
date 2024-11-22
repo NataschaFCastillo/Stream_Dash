@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# this change need
+# File_path
 file_path = "Restaurant_Ratings.xlsx"
 st.title("PreProcessing")
 
