@@ -6,7 +6,8 @@ import plotly.express as px
 # File_path
 file_path = "merged_df.csv"
 
-st.title("🔍 EDA")
+
+st.title("🔍 Exploring the data")
 merged_df = pd.read_csv(file_path)
 
 filter_cuisine = st.sidebar.checkbox("Filter by Cuisine", value=False)
@@ -68,9 +69,28 @@ fig = px.pie(
     value_counts,
     names='Franchise',
     values='count',
-    title='Franchise Distribution',
+    title='Franchise or Independent? Restaurant Distribution in the Market 🏢',
     hover_data=['count'],  # Display counts on hover
 )
+
+# Update layout to show values 
+fig.update_layout(
+    xaxis_title=None,  # Remove X-axis label
+    yaxis_title=None,  # Remove Y-axis label
+    title_font_size=22,  # Bigger font size for the title
+    font=dict(size=16),  # Adjust font size
+    showlegend=True,
+    legend=dict(
+        font=dict(size=16),  # Increase legend font size
+    ),
+    xaxis_showgrid=False,  # Remove vertical gridlines
+    yaxis_showgrid=False,  # Remove horizontal gridlines
+    plot_bgcolor="white",  # Set background to white for a clean look
+    
+
+)
+
+
 
 # Show the pie chart in Streamlit
 st.plotly_chart(fig)
@@ -84,17 +104,37 @@ fig = px.pie(
     value_counts,
     names='Price',
     values='count',
-    title='Price Categorization',
+    title='How Restaurants are Priced: Low, Medium, or High 💲',
     hover_data=['count'],  # Display counts on hover
 )
+
+# Update layout to show values 
+fig.update_layout(
+    xaxis_title=None,  # Remove X-axis label
+    yaxis_title=None,  # Remove Y-axis label
+    title_font_size=22,  # Bigger font size for the title
+    font=dict(size=16),  # Adjust font size
+    showlegend=True,
+    legend=dict(
+        font=dict(size=16),  # Increase legend font size
+    ),
+    xaxis_showgrid=False,  # Remove vertical gridlines
+    yaxis_showgrid=False,  # Remove horizontal gridlines
+    plot_bgcolor="white",  # Set background to white for a clean look
+    
+
+)
+
+
+
 
 # Show the pie chart in Streamlit
 st.plotly_chart(fig)
 
 
-st.write("Top Cuisine Count")
+st.write("Discover fresh tips and recommendations for the best cuisines")
 number_of_cuisines = st.number_input(
-    "Enter the number of top cuisines to display:",
+    "✨ Want to see the most popular cuisines? Adjust the number below to explore top-rated options:",
     min_value=1,
     max_value=len(merged_df["Cuisine"].unique()),
     value=5,
@@ -114,12 +154,40 @@ fig = px.bar(
     x='Cuisine',
     y='count',
     title=f"Top {number_of_cuisines} Cuisines",
-    text='count',  # Display counts on the bars
-    labels={'Cuisine': 'Cuisine', 'count': 'Count'},
+    #text='count',  # Display counts on the bars
+    hover_data={"count": True} , # Enable tooltips for count
+    labels={'Cuisine': 'Cuisine', 'count': 'Count'}
 )
 
 # Update layout to show values on bars
 fig.update_traces(textposition='outside')
+fig.update_layout(
+    xaxis_title=None,  # Remove X-axis label
+    yaxis_title=None,  # Remove Y-axis label
+    title_font_size=22,  # Bigger font size for the title
+    font=dict(size=16),  # Adjust font size
+    xaxis_showgrid=False,  # Remove vertical gridlines
+    yaxis_showgrid=False,  # Remove horizontal gridlines
+    plot_bgcolor="white",  # Set background to white for a clean look
+
+)
+
+# Ensure tooltips appear on hover
+fig.update_traces(
+    hovertemplate="<b>Cuisine: %{x}</b><br>Count: %{y}<extra></extra>",
+    text=None  # Remove direct text labels on the bars
+)
+
+
+# Remove data labels
+#fig.update_traces(text=None)
+
+
+# Optionally hide tick marks (if needed)
+fig.update_xaxes(showticklabels=True)
+fig.update_yaxes(showticklabels=False)
+
+
 
 # Display the bar chart in Streamlit
 st.plotly_chart(fig)
@@ -133,9 +201,32 @@ fig = px.pie(
     value_counts,
     names='Overall_Rating',
     values='count',
-    title='Overall_Rating Restaurant Counts',
+    title='Restaurant Feedback Overview: Love It or Leave It?🍽️',
     hover_data=['count'],  # Display counts on hover
 )
 
+# Update layout to show values 
+fig.update_layout(
+    xaxis_title=None,  # Remove X-axis label
+    yaxis_title=None,  # Remove Y-axis label
+    title_font_size=22,  # Bigger font size for the title
+    font=dict(size=16),  # Adjust font size
+    showlegend=True,
+    legend=dict(
+        font=dict(size=16),  # Increase legend font size
+    ),
+    xaxis_showgrid=False,  # Remove vertical gridlines
+    yaxis_showgrid=False,  # Remove horizontal gridlines
+    plot_bgcolor="white",  # Set background to white for a clean look
+    
+
+)
+
+
+
 # Show the pie chart in Streamlit
 st.plotly_chart(fig)
+
+
+
+
