@@ -159,18 +159,18 @@ fig = px.bar(
     labels={'Cuisine': 'Cuisine', 'count': 'Count'}
 )
 
-# Update layout to show values on bars
-fig.update_traces(textposition='outside')
+# Update layout to show values 
 fig.update_layout(
     xaxis_title=None,  # Remove X-axis label
     yaxis_title=None,  # Remove Y-axis label
     title_font_size=22,  # Bigger font size for the title
-    font=dict(size=16),  # Adjust font size
     xaxis_showgrid=False,  # Remove vertical gridlines
     yaxis_showgrid=False,  # Remove horizontal gridlines
-    plot_bgcolor="white",  # Set background to white for a clean look
-
 )
+
+# Update layout to show values on bars
+fig.update_traces(textposition='outside')
+
 
 # Ensure tooltips appear on hover
 fig.update_traces(
