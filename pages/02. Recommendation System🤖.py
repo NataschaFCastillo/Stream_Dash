@@ -95,7 +95,7 @@ def recommend_restaurants(df, restaurant_id, n, method='user'):
 
 
 def run_app():
-    st.title("Restaurant Recommender System")
+    #st.title("Restaurant Recommender System")
 
     # Preprocess the dataset
     merged_df = pd.read_csv(file_path)
@@ -120,7 +120,7 @@ def run_app():
     similar_restaurants = recommend_restaurants(
         df_processed, rest_dict[restaurant_name], n, method=method)
 
-    st.subheader("Recommended Restaurants:")
+    st.subheader("✨Discovering The Hottest Spots to Eat:")
     st.write(similar_restaurants[['Restaurant_Name',
              'Overall_Rating', 'Price', 'Franchise']])
 
