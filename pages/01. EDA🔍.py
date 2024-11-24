@@ -104,7 +104,7 @@ fig = px.pie(
     value_counts,
     names='Price',
     values='count',
-    title='How Restaurants are Priced: Low, Medium, or High 💲',
+    title='How Restaurants are Priced: Low, Medium or High 💲',
     hover_data=['count'],  # Display counts on hover
 )
 
