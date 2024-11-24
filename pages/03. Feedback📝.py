@@ -31,8 +31,8 @@ def save_feedback(folder_path, name, feedback):
 
 # Get inputs from the user
 st.write("Did you enjoy your recommendation?")
-yes_button_clicked = st.button("Yes!")
-no_button_clicked = st.button("No!")
+yes_button_clicked = st.button("👍Yes!")
+no_button_clicked = st.button("👎No!")
 
 if yes_button_clicked:
     st.write("Glad you enjoyed it!?")
